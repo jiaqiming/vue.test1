@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+//javascript简介
+<div>
+    <p>javascript可以直接写入HTML输出流</p>
+    <button onclick="alert('欢迎！')">button</button>
+
+    <div id="demo">这是js教程</div>
+    <button type="button" onclick="myFunction()">点击这里改变demo的值</button>
+
+    <div>
+        <img src="../image/pic_bulboff.gif" alt="" id="myimage" onclick="changeImage()">
+    </div>
+
+    <h1 id="p_c" onclick="changeStyle ()">JavaScript可以改变HTML的样式</h1>
+
+    <p>请输入数字，如果不是数字，浏览器会弹出不是数字</p>
+    <p>
+        <input type="text" id="val">
+        <button onclick="validation()">点击这里</button>
+    </p>
+</div>
+
+
+javascript的字面量
+
+JavaScript函数
+<p>点击这个按钮，来调用带参数的函数</p>
+<button onclick="myFunction('john','teach')">点击这里</button>
+
+<p>如果你的变量没有声明，它将作为全局变量</p>
+<p id="a_v"></p>
+
+<p id="st">字符串</p>
+
+</body>
+<script>
+
+    document.write('这是一个段落');
+    document.write('<h1>这是一个语句</h1>')
+
+    function myFunction(){
+        var x=document.getElementById ('demo');
+        x.innerHTML='这不是js教程'
+    }
+
+    function changeImage(){
+        element=document.getElementById('myimage');
+        if(element.src.match('bulbon')){                //element.src.match()
+            element.src='../image/pic_bulboff.gif'
+        }else{
+            element.src='../image/pic_bulbon.gif'
+        }
+    }
+
+    function changeStyle(){
+        x=document.getElementById('p_c');
+        x.style.color='red'
+    }
+
+    function validation(){
+        x=document.getElementById('val').value;
+        if (isNaN(x)){
+            alert('不是数字')
+        }
+    }
+
+
+    myFunction=function(name,job){
+        alert('welcome'+' '+name+'it is your'+' '+job)
+    }
+
+    function x(){
+        carname='volve';
+    }
+    x();
+    document.getElementById('a_v').innerHTML='我可以显示'+carname;
+
+    var str1='john';
+    var str2=new String('john');
+    document.getElementById('st').innerHTML=typeof str1+' '+typeof str2
+
+    var str="hello world,welcome to the universe";
+
+    console.log(str.indexOf('z'));
+
+
+</script>
+</html>

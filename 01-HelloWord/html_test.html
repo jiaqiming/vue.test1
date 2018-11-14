@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+</style>
+<body>
+<p>如果你点按钮，我会消失</p>
+<button id="btn1" style="margin-bottom:20px;">点我</button>
+
+<button id="btn2" style="background-color:gold">点击消失</button>
+<div id="square1" style="width:80px;height:80px;background-color:red"></div><br>
+<div id="square2" style="width:80px;height:80px;background-color:green"></div><br>
+<div id="square3" style="width:80px;height:80px;background-color:blue"></div><br>
+</body>
+<script src="../js/jquery-3.3.1.js "></script>
+<script>
+    $(document).ready(function(){
+        $('#btn1').click(function(){
+            $('p').slideToggle()
+        })
+    })
+
+    $('#btn2').click(function(){
+        $('#square1').fadeTo('',0.5);
+        $('#square2').fadeTo('slow',0.3);
+        $('#square3').fadeTo('3000',0.1);
+    })
+</script>
+</html>
